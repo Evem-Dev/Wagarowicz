@@ -1,5 +1,5 @@
 <?php
-class controllerHome extends Controller 
+class controllerAccount extends Controller 
 {
 	public function __construct($action = NULL)
 	{
