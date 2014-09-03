@@ -14,7 +14,7 @@ class viewAccount extends View
 			{
 				if($this->model->auth())
 				{
-					$this->render('Account/Profile');
+					$this->render('Account');
 				}
 				else
 				{
