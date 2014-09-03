@@ -35,7 +35,7 @@ class modelPlan extends Model
 		if($_SESSION['auth'] == true and !empty($name))
 		{
 			$l = $_SESSION['login'];
-			$this->db->exec("insert into subject_list_".$l." values(id int auto_increment,'$subject','NULL'");
+			$this->db->exec("insert into subject_list_".$l." values(id int auto_increment,'$subject','NULL','NULL')");
 		}
 	}
 
