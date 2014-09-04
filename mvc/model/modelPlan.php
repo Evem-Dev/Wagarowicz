@@ -38,5 +38,13 @@ class modelPlan extends Model
 			$this->db->exec("insert into subject_list_".$l." values(id int auto_increment,'$subject','NULL','NULL')");
 		}
 	}
+	
+	public function updateAttend($subject,$date)
+	{
+		if(!empty($subject) and !empty($date))
+		{
+			$handle = $this->db->query("select * from attend_".$l." where date='$date' and subject='$subject'");
+		}
+	}
 
 }
