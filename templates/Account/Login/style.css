@@ -1,11 +1,61 @@
 html , body
 {
-	background-color: blue;
+	background-color: #0033FF;
 
 }
 
-h1
+#lf {
+
+
+	background-color: #0000ff;
+
+	border-radius: 15px;
+	border-style: solid;
+	border-color: #0000ff;
+	position: absolute;
+
+	height: 300px;
+	width: 400px;
+
+	margin-left: 300px;
+	margin-top: 120px;
+	color:white;
+	box-shadow:  5px 3px 4px 5px rgba(0, 0, 0, 0.5);;
+
+
+}
+
+#lf-l {
+	background-color: #0033FF;
+	border-style: solid;
+	border-top-color: #000066;
+	border-bottom-color: blue;
+	border-right-color: blue;
+	margin-left: 30px;
+	margin-top: 100px;
+	color:white;
+}
+
+#lf-h 
 {
-	font-size: 43px;
-	color: pink;
+	background-color: #0033FF;
+	border-style: solid;
+	border-top-color: #000066;
+	border-bottom-color: blue;
+	border-right-color: blue;
+
+	margin-left: 30px;
+	margin-top: 10px;
+	color: white;
+
+}
+#lf-sub
+{	
+	background-color:  	#0033FF ;
+	color: white;
+	margin-top: 10px;
+	margin-left: 203px;
+	border-radius: 12px;
+	border-style: solid;
+	border-color: #330033;
 }

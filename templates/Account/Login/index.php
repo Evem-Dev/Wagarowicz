@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang='pl'>
 <head>
+	<meta charset='utf-8'>
 	<title>Wagarowicz| Login</title>
 	<link rel="stylesheet" type="text/css" href="templates/Account/Login/style.css">
 </head>
@@ -8,18 +9,17 @@
 
 
 
-<div class='login-form'>
 
 
-<form  action='' method='post'>
+<form id='lf' action='' method='post'>
 
-Login: <input type='text' name='login'><br>
-Hasło: <input type='password' name='passwd'><br>
-<input type='submit' value='zaloguj'>
+&nbsp;&nbsp;&nbsp;Login: <input id='lf-l' type='text' name='login'><br>
+&nbsp;&nbsp;&nbsp;Hasło: <input id='lf-h' type='password' name='passwd'><br>
+<input type='submit' id='lf-sub' value='zaloguj'>
 
 </form>
 
-</div>
+
 
 
 </body>
