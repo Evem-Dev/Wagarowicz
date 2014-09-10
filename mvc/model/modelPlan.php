@@ -29,5 +29,30 @@ class modelPlan extends Model
 		}
 	}
 
-	
+	public function addAbsent($subject,$date)
+	{
+		if(isset($subject) and isset($date))
+		{
+			if($_SESSION['auth'])
+			{
+				$l = $_SESSION['login'];
+				$this->db->exec("insert into attend_".$l." values('NULL','$subject','$date')");
+
+			}
+		}
+	}
+
+	public function getAbsentBySubject($subject)
+	{
+		if($_SESSION['auth'])
+		{
+			if(!empty($subject))
+			{
+				$l = $_SESSION['login'];
+				$handle = $this->db->query("select COUNT(adate) FROM attend_".$l." where subject='$subject' ");
+				$result = $handle->fetch(PDO::FETCH_ROW);
+				return $result; //check how to fetch one row by var_dump();
+			}
+		}
+	}
 }
