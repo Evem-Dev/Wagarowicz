@@ -11,7 +11,7 @@
 
 
 
-<form id='lf' action='' method='post'>
+<form id='lf' action='index.php?request=Account&action=login' method='post'>
 
 &nbsp;&nbsp;&nbsp;Login: <input id='lf-l' type='text' name='login'><br>
 &nbsp;&nbsp;&nbsp;Hasło: <input id='lf-h' type='password' name='passwd'><br>

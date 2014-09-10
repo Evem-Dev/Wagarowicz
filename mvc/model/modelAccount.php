@@ -8,9 +8,9 @@ class modelAccount extends Model
 
 	public function auth()
 	{
-		if($_SESSION['auth'] == true)
+		if(isset($_SESSION['auth']))
 		{
-			return true;
+			return $_SESSION['auth'];
 		}
 		else
 		{
@@ -33,18 +33,30 @@ class modelAccount extends Model
 	}
 
 	public function login($login,$passwd)
-	{
+	{	
 		if(!empty($login) and !empty($passwd))
 		{
+			
 			$handle = $this->db->query("select passwd from users where login='$login'");
-			$result = $handle->fetch(POD::FETCH_ASSOC);
+			$result = $handle->fetch(PDO::FETCH_ASSOC);
+			
 			$passwddb = $result['passwd'];
+			echo $passwddb;
 			if(md5($passwd) == $passwddb)
 			{
+				
 				$_SESSION['auth'] = true;
 				$_SESSION['login'] = $login;
-
+				return true;
 			}
+			else
+			{
+				return "PASSWD_NOT_MATCH";
+			}
+
+		}else
+		{
+			return "MISSING_ARGS";
 		}
 	} 
 	public function checkFreeLogin($login)
@@ -60,6 +72,19 @@ class modelAccount extends Model
 			else
 			{
 				return false;
+			}
+		}
+	}
+
+	public function logout()
+	{
+		if(isset($_SESSION['auth']))
+		{
+			if($_SESSION['auth'])
+			{
+				unset($_SESSION['auth']);
+				unset($_SESSION['login']);
+				header("Location index.php?request=Account");
 			}
 		}
 	}

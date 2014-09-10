@@ -3,6 +3,7 @@
 class viewAccount extends View 
 {
 	private $model;
+	protected $account_info;
 
 			public function __construct()
 			{
@@ -14,7 +15,10 @@ class viewAccount extends View
 			{
 				if($this->model->auth())
 				{
+					$this->account_info = array('Login'=>$_SESSION['login']);
+
 					$this->render('Account');
+
 				}
 				else
 				{
@@ -22,9 +26,26 @@ class viewAccount extends View
 				}
 			}
 
+			public function login()
+			{
+				$r = $this->model->login($_POST['login'],$_POST['passwd']);
+
+				
+				header("Location: index.php?request=Account");
+			}
+			public function logout()
+			{
+				$this->model->logout();
+				$this->index();
+			}
+
 
 			public function register()
-			{
+			{	if(isset($_POST['email']) and isset($_POST['login']) and isset($_POST['passwd1']) and isset($_POST['passwd2']))
+				{
+					$this->model->register($_POST['login'],$_POST['email'],$_POST['passwd1'],$_POST['passwd2']);
+				}
+
 				$this->render('Account/Register');
 			}
 
