@@ -4,47 +4,30 @@
 class modelPlan extends Model 
 {
 
+	
 
 	public function __construct()
 	{
 		parent::__construct();
+
 	}
 
-	public function addattend($subject,$date)
+	public function createPlan($pn,$wt,$sr,$cz,$pt)
 	{
-		if($_SESSION['auth'] == true and !empty($date) and !empty($subject))
+		if(isset($pn) and isset($wt) and isset($sr) and isset($cz) and isset($pt) and $_SESSION['auth'] == true)
 		{
 			$l = $_SESSION['login'];
-			$this->db->exec("insert into attend_".$l." values('NULL','$subject','$date')");
+			$this->db->query("create table plan_".$l."(id int auto_increment,pn text,wt text,sr text,cz text,pt text,primary key(id))");
+
+			$pn = serialize($pn);
+			$wt = serialize($wt);
+			$sr = serialize($sr);
+			$cz = serialize($cz);
+			$pt = serialize($pt);
+			$this->db->exec("insert into plan_".$l." values('NULL','$pt','$wt','$sr','$cz','$pt')");
 
 		}
 	}
 
-	public function setCountSubject($subject,$count)
-	{
-		if($_SESSION['auth'] == true and !empty($subject) and !empty($count))
-		{
-			$l = $_SESSION['login'];
-			$this->db->exec("insert into subject_count_".$l." values('NULL','$subject','$count')");
-
-		}
-	}
-
-	public function addSubject($name)
-	{
-		if($_SESSION['auth'] == true and !empty($name))
-		{
-			$l = $_SESSION['login'];
-			$this->db->exec("insert into subject_list_".$l." values(id int auto_increment,'$subject','NULL','NULL')");
-		}
-	}
 	
-	public function updateAttend($subject,$date)
-	{
-		if(!empty($subject) and !empty($date))
-		{
-			$handle = $this->db->query("select * from attend_".$l." where date='$date' and subject='$subject'");
-		}
-	}
-
 }
