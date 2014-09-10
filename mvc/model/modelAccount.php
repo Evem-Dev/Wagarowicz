@@ -84,21 +84,23 @@ class modelAccount extends Model
 			{
 				unset($_SESSION['auth']);
 				unset($_SESSION['login']);
-				header("Location index.php?request=Account");
+
 			}
 		}
 	}
-	public function createAccount($login,$email,$passwd1,$passwd2)
+	public function createAccount($login,$passwd1,$passwd2)
 	{
-		if(!empty($login) and !empty($emial) and !empty($passwd1) and !empty($passwd2))
+		if(!empty($login)  and !empty($passwd1) and !empty($passwd2))
 		{
 
 			if(md5($passwd1) == md5($passwd2))
-			{
+			{	
 				$passwd = md5($passwd1);
 				if($this->checkFreeLogin($login))
 				{
-					$this->db->exec("insert into users values('NULL','$login','$email','$passwd')");
+					
+					$this->db->exec("insert into users values('NULL','$login','$passwd')");
+					return "BOTH_OK||LOGIN_FREE";
 				}
 				else
 				{

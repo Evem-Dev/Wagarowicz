@@ -24,7 +24,12 @@ html , body
 
 
 }
-
+#lf a 
+{
+	text-decoration: none;
+	color: white;
+	margin-left: -200px;
+}
 #lf-l {
 	background-color: #0033FF;
 	border-style: solid;

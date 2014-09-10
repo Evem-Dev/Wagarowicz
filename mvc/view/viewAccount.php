@@ -41,12 +41,21 @@ class viewAccount extends View
 
 
 			public function register()
-			{	if(isset($_POST['email']) and isset($_POST['login']) and isset($_POST['passwd1']) and isset($_POST['passwd2']))
+			{	if( isset($_POST['login']) and isset($_POST['passwd1']) and isset($_POST['passwd2']))
 				{
-					$this->model->register($_POST['login'],$_POST['email'],$_POST['passwd1'],$_POST['passwd2']);
+					
+					$n = $this->model->createAccount($_POST['login'],$_POST['passwd1'],$_POST['passwd2']);
+					if($n == "BOTH_OK||LOGIN_FREE")
+					{
+						$this->index();
+					}
+				}
+				else
+				{
+					$this->render('Account/Register');
 				}
 
-				$this->render('Account/Register');
+				
 			}
 
 			
