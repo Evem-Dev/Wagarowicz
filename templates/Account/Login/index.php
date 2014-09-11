@@ -24,7 +24,7 @@
 							<p id="loginUsser">Login</p> <input type='text' name='login' id="login"><br>
 							<p id="loginUsser"> Hasło</p> <input type='password' name='passwd' id="passw"><br>
 							<input type='submit' value='Zaloguj' id="loginButon"><br>
-							<a id ="register" href="">Zarejestruj się</a>
+							<a id ="register" href="index.php?request=Account&action=register">Zarejestruj się</a>
 
 
 
