@@ -1,7 +1,7 @@
 <?php
 
-
-class modelPlan extends Model 
+require 'mvc/model/modelAccount.php';
+class modelPlan extends modelAccount
 {
 
 	
