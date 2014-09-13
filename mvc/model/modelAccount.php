@@ -34,8 +34,20 @@ class modelAccount extends Model
 
 	public function hash($pass)
 	{
-		
+
 		return sha1(md5($pass));
+	}
+
+	public function passcomp($p1,$p2)
+	{
+		if($this->hash($p1)==$this->hash($p2))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 
