@@ -32,6 +32,12 @@ class modelAccount extends Model
 		}
 	}
 
+	public function hash($pass)
+	{
+		return sha1(md5($pass));
+	}
+
+
 	public function login($login,$passwd)
 	{	
 		if(!empty($login) and !empty($passwd))
