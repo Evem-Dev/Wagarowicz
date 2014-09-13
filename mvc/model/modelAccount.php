@@ -119,4 +119,10 @@ class modelAccount extends Model
 	}
 
 
+	public function ex()
+	{
+		echo "x";
+	}
+
+
 }
