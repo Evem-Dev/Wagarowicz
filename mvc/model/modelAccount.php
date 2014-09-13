@@ -34,6 +34,7 @@ class modelAccount extends Model
 
 	public function hash($pass)
 	{
+		
 		return sha1(md5($pass));
 	}
 
