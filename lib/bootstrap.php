@@ -31,6 +31,34 @@ class Bootstrap {
 
 	}
 
+
+	public function stats()
+	{
+		if (!empty($_SERVER['HTTP_CLIENT_IP']))
+		{
+    		$ip = $_SERVER['HTTP_CLIENT_IP'];
+		} 
+		elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) 
+		{
+    		$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+		} 
+		else 
+		{
+    		$ip = $_SERVER['REMOTE_ADDR'];
+		}
+
+
+		$cdate = date("Y-m-d H:i:s");
+
+		
+		$db = new Database;
+		$db->exec("insert into connection_log values('NULL','$ip','$cdate')");
+
+
+
+	}
+
+
 	public function router() {
 		if (isset($_GET['request'])) {
 

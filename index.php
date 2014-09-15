@@ -8,6 +8,6 @@ $app = new Bootstrap;
 $app->import('db');
 $app->initMVC();
 $app->router();
-
+$app->stats();
 ?>
 
