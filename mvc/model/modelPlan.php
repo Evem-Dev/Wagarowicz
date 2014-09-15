@@ -19,7 +19,7 @@ class modelPlan extends modelAccount
 			if(isset($pn) and isset($wt) and isset($sr) and isset($cz) and isset($pt))
 			{
 				$l = $_SESSION['login'];
-				$this->db->query("create table plan_".$l."(id int auto_increment,pn text,wt text,sr text,cz text,pt text,primary key(id))");
+				
 
 				$pn = serialize($pn);
 				$wt = serialize($wt);
@@ -37,7 +37,14 @@ class modelPlan extends modelAccount
 		if($this->auth())
 		{
 			$l = $_SESSION['login'];
-			$handle = $this->db->query("select * from ")
+			$handle = $this->db->query("select * from plan_".$l." order by id desc LIMIT 1");
+			$result = $handle->fetch(PDO::FETCH_ASSOC);
+			$pt = unserialize($result['pt']);
+			$wt = unserialize($result['wt']);
+			$sr = unserialize($result['sr']);
+			$cz = unserialize($result['cz']);
+			$pn = unserialize($result['pn']);
+			return array($pn,$wt,$sr,$cz,$pt);
 
 		}
 	}
@@ -52,6 +59,25 @@ class modelPlan extends modelAccount
 				$this->db->exec("insert into attend_".$l." values('NULL','$subject','$date')");
 
 			}
+		}
+	}
+
+	public function getAllAbsent()
+	{
+		if($this->auth())
+		{
+			$l = $_SESSION['login'];
+			$handle = $this->db->query("select * from absent_".$l);
+			$subject = array();
+			$date = array();
+			foreach($handle as $row)
+			{
+
+				array_push($subject, $row['subject']);
+				array_push($date, $row['adate'])
+			}
+			return array('subject' => $subject,'date'=>$date);
+			
 		}
 	}
 

@@ -4,11 +4,11 @@ class viewAccount extends View
 {
 	private $model;
 	protected $account_info;
-
+	private $modelPlan;
 			public function __construct()
 			{
 				$this->model = $this->loadModel('Account');
-
+				$this->modelPlan = $this->loadModel('Plan');
 			}
 
 			public function index()
@@ -58,7 +58,19 @@ class viewAccount extends View
 				
 			}
 
-			
+		
+		public function profile()
+		{
+			if($this->model->auth())
+			{
+				$plan = $this->modelPlan->getPlan();
+				$absent = $this->modelPlan->getAllAbsent();
+
+
+
+				$this->render('Account');
+			}
+		}
 
 }
 
