@@ -64,6 +64,17 @@ html , body
 	
 
 }
+.logout-c
+{
+	display: block;
+	text-decoration: none;
+	padding: 3px 5px;
+	background-color: #ffffff;
+	margin-right: 10px;
+	margin-bottom: -1px;
+	color:#66CCFF;
+	text-shadow: 0.5px 1px 1px blue;
+}
 .tabs a 
 {
 	display: block;
@@ -94,7 +105,15 @@ html , body
 	border-radius: 16px;
 	font-size: 19px;
 }
-
+.logout-c a:hover
+{
+		border-bottom: 1px solid white;
+	background-color: #66CCFF;
+	color: #fffffb;
+	position: relative;
+	border-radius: 16px;
+	font-size: 19px;
+}
 .panelContents {
 	clear: both;
 	margin-bottom: 25px;	

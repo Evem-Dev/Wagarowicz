@@ -4,7 +4,7 @@
 	<title>Wagarowicz - Panel użytkownika</title>
 	<link rel="stylesheet" type="text/css" href="templates/Account/css/usser.css">
 	<meta charset="UTF-8">
-	<script src="jq/jquery-1.6.3.min.js"></script>
+	<script src="templates/Account/jq/jquery-1.6.3.min.js"></script>
 		<script>
 
 			$(document).ready(function()
@@ -47,12 +47,16 @@
 					<ul class="tabs">
 						<li><a href="#tab1" tabindex="1">Twój plan lekcji</a></li>
 						<li><a href="#tab2" tabindex="2">Z czego możesz jeszcze spierdolić</a></li>
-						<li><a href="#"     tabidnex="3">Wyloguj</a></li>
+						<li></li>
 					</ul>
+
+					
+						<a class='logout-c'  href="index.php?request=Account&action=logout" >Wyloguj</a>
+				
 						<div class="panelContents">
 
 							<div id="tab1" class="tab">
-								<h1>Twój plan lekcji Towarzyszu</h1>
+								<h1>Twój plan lekcji</h1>
 					<table border ="12px"class="lessonTable">
 
 					<tr>
@@ -91,12 +95,12 @@
 					</table>
 
 									<form>	
-										<a id="aButon" href="#"><input type="submit" value="Edytuj plan lekcji :)" id="editionButon"><a/>
+										<a id="aButon" href="index.php?request=Account&action=addPlan"><input type="submit" value="Dodaj Plan Zajęć" id="editionButon"><a/>
 									</form>			
 							</div>
 
 							<div id="tab2" class="tab">
-								<h1>Spierdalaj z lekcji towarzyszu</h2>
+								<h1>Spierdalaj z lekcji </h2>
 					
 					<table border="12px" class="spierdalajTable">
 
