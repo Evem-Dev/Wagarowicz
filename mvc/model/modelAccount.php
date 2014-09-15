@@ -119,6 +119,7 @@ class modelAccount extends Model
 				{
 					
 					$this->db->exec("insert into users values('NULL','$login','$passwd')");
+					$this->db->exec("create table absent_".$login."(id int auto_increment,subject text,adate datetime,primary key(id))");
 					$this->db->query("create table plan_".$login."(id int auto_increment,pn text,wt text,sr text,cz text,pt text,primary key(id))");
 					return "BOTH_OK||LOGIN_FREE";
 				}
