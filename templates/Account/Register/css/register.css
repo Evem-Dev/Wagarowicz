@@ -1,0 +1,107 @@
+html , body 
+{
+	background: url(../imagesRegister/bg.png);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100%;
+}
+
+#registerPanel
+{
+	width: 750px;
+	height: 580px;
+	position: relative;
+	background-color: #66CCFF;
+	margin-top: 7px;
+	margin-left: 280px;
+	display: block;
+	box-shadow: 3px 3px 40px 3px rgba(0, 0, 0, 6);
+	border-radius: 24px;
+}
+
+#productText
+{
+	display:block;
+	margin-left: 200px;
+
+}
+
+#welcomeText
+{
+	color: #ffffff;
+	font-family: sans-serif;
+}
+
+#wagarowiczImage
+{
+	display: block;
+}
+
+#registerPanelContent
+{
+	height: 350px;
+	width: 600px;
+	background-color: #ffffff;
+	float: left;
+	margin-left: -125px;
+	margin-top: 10px;
+	border-radius: 16px;
+}
+
+#registerUsserForms
+{
+	float: left;
+	display: block;
+	margin-top: 20px;
+}
+
+#registerUsser
+{
+	float left;
+	font-size: 24px;
+	color:#66CCFF ;
+	text-shadow: 0.5px 1px 1px blue;
+	margin-left: 35px;
+			
+}
+
+#login , #passwd , #passwCheck 
+{
+	float:left;
+	margin-top: -50px;
+	width: 300px;
+	border-radius: 12px;
+	margin-left: 170px;
+}
+
+
+#login:hover , #passwd:hover , #passwCheck:hover
+{
+	background-color: #66CCFF;
+	color: #fffffb;
+}
+
+#registerButon
+{
+	width: 450px;
+	margin-top: 30px;
+	margin-left: 75px;
+	height: 40px;
+	border-radius: 20px;
+	font-size: 20px;
+	color: #66CCFF;
+	text-shadow: 0.5px 1px 1px blue;
+	background-color: #fffff0;
+}
+
+#registerButon:hover
+{
+	background-color: #66CCFF;
+	color: #fffffb;
+	font-size: 26px;
+}
+
+
+
+
+ 
