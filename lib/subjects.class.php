@@ -7,7 +7,7 @@ class Subjects implements iSubject
 {
 	private $subject_list;
 
-	public function __set($subjects_array)
+	public function set($subjects_array)
 	{
 		if(isset($subjects_array))
 		{
