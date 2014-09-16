@@ -121,7 +121,9 @@ class modelAccount extends Model
 					$plan = new TimeTable;
 					$subjects = new Subjects;
 					$attendence = new Attendence;
-					
+					$plan = serialize($plan);
+					$subjects = serialize($subjects);
+					$attendence = serialize($attendence);
 
 					$this->db->exec("insert into users values('NULL','$login','$passwd','$plan','$attendence','$subjects')");
 					
