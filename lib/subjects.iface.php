@@ -1,7 +1,7 @@
 <?php
 
 
-interface iSubjects 
+interface iSubject
 {
 	
 
