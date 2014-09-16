@@ -1,6 +1,6 @@
 <?php
 
-interface timetable
+interface iTimetable
 {
 	
 

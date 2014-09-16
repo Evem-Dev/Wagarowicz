@@ -2,7 +2,7 @@
 
 require 'lib/timetable.iface.php';
 
-class TimeTable implements timetable
+class TimeTable implements iTimetable
 {
 
 	private $pn;
