@@ -4,7 +4,7 @@ require 'mvc/model/modelAccount.php';
 class modelPlan extends modelAccount
 {
 
-	
+	private $plan;
 
 	public function __construct()
 	{
@@ -34,7 +34,7 @@ class modelPlan extends modelAccount
 
 	public function getPlan()
 	{
-		if($this->auth())
+		if($_SESSION['auth'])
 		{
 			$l = $_SESSION['login'];
 			$handle = $this->db->query("select * from plan_".$l." order by id desc LIMIT 1");
@@ -74,10 +74,10 @@ class modelPlan extends modelAccount
 			{
 
 				array_push($subject, $row['subject']);
-				array_push($date, $row['adate'])
+				array_push($date, $row['adate']);
 			}
 			return array('subject' => $subject,'date'=>$date);
-			
+
 		}
 	}
 

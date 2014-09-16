@@ -4,11 +4,13 @@ class viewHome extends View {
 	private $model;
 
 	public function __construct() {
-		$this->model = $this->loadModel('Home');
+		$this->model = $this->loadModel('Account');
 	}
 
 	public function index() {
-		$this->render('Home');
-
+	
+		
+			header("Location: index.php?request=Account");
+	
 	}
 }

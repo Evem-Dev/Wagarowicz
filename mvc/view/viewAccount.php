@@ -4,11 +4,11 @@ class viewAccount extends View
 {
 	private $model;
 	protected $account_info;
-	private $modelPlan;
+	
 			public function __construct()
 			{
-				$this->model = $this->loadModel('Account');
-				$this->modelPlan = $this->loadModel('Plan');
+				$this->model = $this->loadModel('Plan');
+				
 			}
 
 			public function index()
