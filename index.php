@@ -9,7 +9,7 @@ $app = new Bootstrap;
 $app->import('db');
 $app->import('timetable.class');
 $app->import('subjects.class');
-
+$app->import('attendence.class');
 $app->initMVC();
 $app->router();
 $app->stats();

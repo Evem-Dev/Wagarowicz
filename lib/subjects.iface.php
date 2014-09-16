@@ -3,9 +3,7 @@
 
 interface iSubjects 
 {
-	private $subject_list;
-
-}
+	
 
 	public function getSubjectById($id);
 	
