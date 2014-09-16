@@ -120,9 +120,10 @@ class modelAccount extends Model
 					
 					$plan = new TimeTable;
 					$subjects = new Subjects;
+					$attendence = new Attendence;
 					
 
-					$this->db->exec("insert into users values('NULL','$login','$passwd','$plan','$attendance','$subjects')");
+					$this->db->exec("insert into users values('NULL','$login','$passwd','$plan','$attendence','$subjects')");
 					
 
 					return "BOTH_OK||LOGIN_FREE";
