@@ -5,10 +5,21 @@ class modelPlan extends modelAccount
 {
 
 	private $plan;
+	private $attendence;
+	private $subjects;
 
 	public function __construct()
 	{
 		parent::__construct();
+		if($this->auth())
+		{
+			$l = $_SESSION['login'];
+			$handle = $this->db->query("select * from users where login='$l'");
+			$result = $handle->fetch(PDO::FETCH_ASSOC);
+			$this->plan = unserialize($result['plan']);
+			$this->attendence = unserialize($result['attendence']);
+			$this->subjects = unserialize($result['subjects']);
+		}
 
 	}
 
@@ -16,19 +27,7 @@ class modelPlan extends modelAccount
 	{
 		if($this->auth())
 		{
-			if(isset($pn) and isset($wt) and isset($sr) and isset($cz) and isset($pt))
-			{
-				$l = $_SESSION['login'];
-				
-
-				$pn = serialize($pn);
-				$wt = serialize($wt);
-				$sr = serialize($sr);
-				$cz = serialize($cz);
-				$pt = serialize($pt);
-				$this->db->exec("insert into plan_".$l." values('NULL','$pt','$wt','$sr','$cz','$pt')");
-
-			}
+			
 		}
 	}
 
@@ -36,15 +35,7 @@ class modelPlan extends modelAccount
 	{
 		if($_SESSION['auth'])
 		{
-			$l = $_SESSION['login'];
-			$handle = $this->db->query("select * from plan_".$l." order by id desc LIMIT 1");
-			$result = $handle->fetch(PDO::FETCH_ASSOC);
-			$pt = unserialize($result['pt']);
-			$wt = unserialize($result['wt']);
-			$sr = unserialize($result['sr']);
-			$cz = unserialize($result['cz']);
-			$pn = unserialize($result['pn']);
-			return array($pn,$wt,$sr,$cz,$pt);
+			
 
 		}
 	}
