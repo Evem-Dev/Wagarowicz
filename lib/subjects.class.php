@@ -7,9 +7,12 @@ class Subjects implements iSubject
 {
 	private $subject_list;
 
-	public function __construct($subjects_array)
+	public function __set($subjects_array)
 	{
-		$this->subject_list = $subjects_array;
+		if(isset($subjects_array))
+		{
+			$this->subject_list = $subjects_array;
+		}
 	}
 
 	public function getSubjectById($id)
