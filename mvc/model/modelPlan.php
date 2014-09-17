@@ -94,17 +94,8 @@ class modelPlan extends modelAccount
 	{
 		if($this->auth())
 		{
-			$l = $_SESSION['login'];
-			$handle = $this->db->query("select * from absent_".$l);
-			$subject = array();
-			$date = array();
-			foreach($handle as $row)
-			{
-
-				array_push($subject, $row['subject']);
-				array_push($date, $row['adate']);
-			}
-			return array('subject' => $subject,'date'=>$date);
+			$all = $this->attendence->getAllAttendence();
+			return $all;
 
 		}
 	}
@@ -115,10 +106,8 @@ class modelPlan extends modelAccount
 		{
 			if(!empty($subject))
 			{
-				$l = $_SESSION['login'];
-				$handle = $this->db->query("select COUNT(adate) FROM attend_".$l." where subject='$subject' ");
-				$result = $handle->fetch(PDO::FETCH_ROW);
-				return $result; //check how to fetch one row by var_dump();
+				$absent_array = $this->attendence->getAbsentBySubject($subject);
+				return $absent_array;
 			}
 		}
 	}
