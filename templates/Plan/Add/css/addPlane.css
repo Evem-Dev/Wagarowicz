@@ -1,0 +1,170 @@
+html , body 
+{
+	background: url(../addPlaneImages/bg.png);
+	background-size: cover;
+	background-attachment: fixed;
+	color: #66CCFF;
+	text-shadow:0.5px 1px 1px blue;
+	font-size: 23px;
+}
+
+#content
+{
+	width:750px;
+	height:  750px; 
+	background-color: #66CCFF;
+	margin-top: 7px;
+	margin-left: 280px;
+	display: block;
+	border-radius: 24px;
+	box-shadow: 3px 3px 40px 3px rgba(0, 0, 0, 6);
+	position:relative;
+}
+
+#thisShitLogo
+{
+	margin-left: 200px;
+	display: block;
+}
+
+#addContent
+{
+	width: 700px;
+	height: 600px;
+	background-color: #ffffff;
+	margin-left: 25px;
+	border-radius: 16px;
+	margin-top: 25px;
+	box-shadow: 3px 3px 25px 3px rgba(0, 0, 0, 6);
+	position: relative;
+}
+
+
+.tabsPanels 
+{
+	width: 100%;
+	float:left;
+	margin-left: 1%;
+	position: relative;
+	height: auto;
+}
+	
+
+.tabs , .nav
+{
+	margin: 0;
+	padding: 0;	
+	zoom : 1;
+}
+.tabs li , .nav
+{
+	float: left;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size: 18px;
+	
+
+}
+.tabs a , .nav
+{
+	display: block;
+	text-decoration: none;
+	padding: 3px 5px;
+	background-color: #ffffff;
+	margin-right: 10px;
+	margin-bottom: -1px;
+	color:#66CCFF;
+	text-shadow: 0.5px 1px 1px blue;
+}
+.tabs .active 
+{
+	border-bottom: 1px solid white;
+	background-color: #66CCFF;
+	color: #fffffb;
+	position: relative;
+	border-radius: 16px;
+	font-size: 18px;
+}
+
+.tabs a:hover 
+{
+	border-bottom: 1px solid white;
+	background-color: #66CCFF;
+	color: #fffffb;
+	position: relative;
+	border-radius: 16px;
+	font-size: 18px;
+}
+
+#home:hover , #logout-c:hover
+{
+	border-bottom: 1px solid white;
+	background-color: #66CCFF;
+	color: #fffffb;
+	position: relative;
+	border-radius: 16px;
+	font-size: 18px;
+}
+
+.panelContents 
+{
+	clear: both;
+	margin-bottom: 25px;	
+	background-color: white;
+	padding-left: 50px;
+	padding-top: 10px;
+
+}
+
+h1
+{
+	text-align: center;
+	color: #66CCFF;
+	text-shadow: 0.5px 1px 1px blue;
+	margin-left: -50px;
+	font-size: 28px;
+
+}
+
+
+
+.addPlane
+{
+
+	width: 450px;
+	margin-left: 50px;
+	font-size: 28px;
+	border-radius: 12px;
+	color: #66CCFF;
+}
+
+.addPlane:hover
+{
+	background-color: #66CCFF;
+	color: #fffffb
+} 
+
+#input10
+{
+	margin-left: 35px;
+}
+
+#save
+{
+	margin-top: 30px;
+	margin-left: 135px;
+	width: 300px;
+	border-radius: 12px;
+	background-color: #fffffb;
+	color: #66CCFF;
+	text-shadow:0.5px 1px 1px blue;
+	font-size: 18px;
+}
+
+#save:hover
+{
+	background-color: #66CCFF;
+	color: #fffffb;
+	font-size: 20px;
+}
