@@ -56,17 +56,17 @@
 				<div class="panelContents">
 					<div class="tab" id="tab1">
 						<h1>Dodaj swój plan lekcji na poniedziałek</h1>
-						<form class="addplane" action='index.php?request=Account&action=addplan' method='post'>
-							1<input type="text" class="addPlane"  maxlength="18"name='pn1'><br>
-							2<input type="text" class="addPlane" maxlength="18"name='pn2'><br>
-							3<input type="text" class="addPlane" maxlength="18"name='pn3'><br>
-							4<input type="text" class="addPlane" maxlength="18"name='pn4'><br>
-							5<input type="text" class="addPlane" maxlength="18"name='pn5'><br>
-							6<input type="text" class="addPlane" maxlength="18"name='pn6'><br>
-							7<input type="text" class="addPlane" maxlength="18"name='pn7'><br>
-							8<input type="text" class="addPlane" maxlength="18"name='pn8'><br>
-							9<input type="text" class="addPlane" maxlength="18"name='pn9'><br>
-							10<input type="text" class="addPlane" id="input10" maxlength="18" name='pn10'><br>
+						<form class="addplane" action='index.php?request=Account&action=addplan&day=pn' method='post'>
+							1<input type="text" class="addPlane"  maxlength="18"name='1'><br>
+							2<input type="text" class="addPlane" maxlength="18"name='2'><br>
+							3<input type="text" class="addPlane" maxlength="18"name='3'><br>
+							4<input type="text" class="addPlane" maxlength="18"name='4'><br>
+							5<input type="text" class="addPlane" maxlength="18"name='5'><br>
+							6<input type="text" class="addPlane" maxlength="18"name='6'><br>
+							7<input type="text" class="addPlane" maxlength="18"name='7'><br>
+							8<input type="text" class="addPlane" maxlength="18"name='8'><br>
+							9<input type="text" class="addPlane" maxlength="18"name='9'><br>
+							10<input type="text" class="addPlane" id="input10" maxlength="18" name='10'><br>
 							 <input type='submit' value='Zapisz :)' id="save">
 
 
@@ -75,71 +75,71 @@
 					</div>
 					<div class="tab" id="tab2">
 						<h1>Dodaj swój plan lekcji na wtorek</h1>
-						<form class="addplane" action='index.php?request=Account&action=addplan' method='post'>
-							1<input type="text" class="addPlane"  maxlength="18"name='pn1'><br>
-							2<input type="text" class="addPlane" maxlength="18"name='pn2'><br>
-							3<input type="text" class="addPlane" maxlength="18"name='pn3'><br>
-							4<input type="text" class="addPlane" maxlength="18"name='pn4'><br>
-							5<input type="text" class="addPlane" maxlength="18"name='pn5'><br>
-							6<input type="text" class="addPlane" maxlength="18"name='pn6'><br>
-							7<input type="text" class="addPlane" maxlength="18"name='pn7'><br>
-							8<input type="text" class="addPlane" maxlength="18"name='pn8'><br>
-							9<input type="text" class="addPlane" maxlength="18"name='pn9'><br>
-							10<input type="text" class="addPlane" id="input10" maxlength="18" name='pn10'><br>
+						<form class="addplane" action='index.php?request=Account&action=addplan&day=wt' method='post'>
+							1<input type="text" class="addPlane"  maxlength="18"name='1'><br>
+							2<input type="text" class="addPlane" maxlength="18"name='2'><br>
+							3<input type="text" class="addPlane" maxlength="18"name='3'><br>
+							4<input type="text" class="addPlane" maxlength="18"name='4'><br>
+							5<input type="text" class="addPlane" maxlength="18"name='5'><br>
+							6<input type="text" class="addPlane" maxlength="18"name='6'><br>
+							7<input type="text" class="addPlane" maxlength="18"name='7'><br>
+							8<input type="text" class="addPlane" maxlength="18"name='8'><br>
+							9<input type="text" class="addPlane" maxlength="18"name='9'><br>
+							10<input type="text" class="addPlane" id="input10" maxlength="18" name='10'><br>
 							 <input type='submit' value='Zapisz :)' id="save">
 
 						</form>
 					</div>
 					<div class="tab" id="tab3">
 						<h1>Dodaj swój plan lekcji na środę</h1>
-						<form class="addplane" action='index.php?request=Account&action=addplan' method='post'>
-							1<input type="text" class="addPlane"  maxlength="18"name='pn1'><br>
-							2<input type="text" class="addPlane" maxlength="18"name='pn2'><br>
-							3<input type="text" class="addPlane" maxlength="18"name='pn3'><br>
-							4<input type="text" class="addPlane" maxlength="18"name='pn4'><br>
-							5<input type="text" class="addPlane" maxlength="18"name='pn5'><br>
-							6<input type="text" class="addPlane" maxlength="18"name='pn6'><br>
-							7<input type="text" class="addPlane" maxlength="18"name='pn7'><br>
-							8<input type="text" class="addPlane" maxlength="18"name='pn8'><br>
-							9<input type="text" class="addPlane" maxlength="18"name='pn9'><br>
-							10<input type="text" class="addPlane" id="input10" maxlength="18" name='pn10'><br>
+						<form class="addplane" action='index.php?request=Account&action=addplan&day=sr' method='post'>
+							1<input type="text" class="addPlane"  maxlength="18"name='1'><br>
+							2<input type="text" class="addPlane" maxlength="18"name='2'><br>
+							3<input type="text" class="addPlane" maxlength="18"name='3'><br>
+							4<input type="text" class="addPlane" maxlength="18"name='4'><br>
+							5<input type="text" class="addPlane" maxlength="18"name='5'><br>
+							6<input type="text" class="addPlane" maxlength="18"name='6'><br>
+							7<input type="text" class="addPlane" maxlength="18"name='7'><br>
+							8<input type="text" class="addPlane" maxlength="18"name='8'><br>
+							9<input type="text" class="addPlane" maxlength="18"name='9'><br>
+							10<input type="text" class="addPlane" id="input10" maxlength="18" name='10'><br>
 							 <input type='submit' value='Zapisz :)' id="save">
 
 
 						</form>
 
 					</div>
-					<div class="tab" id="tab4" action='index.php?request=Account&action=addplan' method='post'>
+					<div class="tab" id="tab4" >
 						<h1>Dodaj swój plan lekcji na czwartek</h1>
-						<form class="addplane" action='index.php?request=Account&action=addplan' method='post'>
-							1<input type="text" class="addPlane"  maxlength="18"name='pn1'><br>
-							2<input type="text" class="addPlane" maxlength="18"name='pn2'><br>
-							3<input type="text" class="addPlane" maxlength="18"name='pn3'><br>
-							4<input type="text" class="addPlane" maxlength="18"name='pn4'><br>
-							5<input type="text" class="addPlane" maxlength="18"name='pn5'><br>
-							6<input type="text" class="addPlane" maxlength="18"name='pn6'><br>
-							7<input type="text" class="addPlane" maxlength="18"name='pn7'><br>
-							8<input type="text" class="addPlane" maxlength="18"name='pn8'><br>
-							9<input type="text" class="addPlane" maxlength="18"name='pn9'><br>
-							10<input type="text" class="addPlane" id="input10" maxlength="18" name='pn10'><br>
+						<form class="addplane" action='index.php?request=Account&action=addplan&day=cz' method='post'>
+							1<input type="text" class="addPlane"  maxlength="18"name='1'><br>
+							2<input type="text" class="addPlane" maxlength="18"name='2'><br>
+							3<input type="text" class="addPlane" maxlength="18"name='3'><br>
+							4<input type="text" class="addPlane" maxlength="18"name='4'><br>
+							5<input type="text" class="addPlane" maxlength="18"name='5'><br>
+							6<input type="text" class="addPlane" maxlength="18"name='6'><br>
+							7<input type="text" class="addPlane" maxlength="18"name='7'><br>
+							8<input type="text" class="addPlane" maxlength="18"name='8'><br>
+							9<input type="text" class="addPlane" maxlength="18"name='9'><br>
+							10<input type="text" class="addPlane" id="input10" maxlength="18" name='10'><br>
 							 <input type='submit' value='Zapisz :)' id="save">
 
 						</form>
 
 					</div>
-					<div class="tab" id="tab5" action='index.php?request=Account&action=addplan' method='post'>
+					<div class="tab" id="tab5" >
 						<h1>Dodaj swój plan lekcji na piątek</h1>
-						<form class="addplane">
-							1<input type="text" class="addPlane"  maxlength="18"name='pn1'><br>
-							2<input type="text" class="addPlane" maxlength="18"name='pn2'><br>
-							3<input type="text" class="addPlane" maxlength="18"name='pn3'><br>
-							4<input type="text" class="addPlane" maxlength="18"name='pn4'><br>
-							5<input type="text" class="addPlane" maxlength="18"name='pn5'><br>
-							6<input type="text" class="addPlane" maxlength="18"name='pn6'><br>
-							7<input type="text" class="addPlane" maxlength="18"name='pn7'><br>
-							8<input type="text" class="addPlane" maxlength="18"name='pn8'><br>
-							9<input type="text" class="addPlane" maxlength="18"name='pn9'><br>
-							10<input type="text" class="addPlane" id="input10" maxlength="18" name='pn10'><br>
+						<form class="addplane" action='index.php?request=Account&action=addplan&day=pt' method='post'>
+							1<input type="text" class="addPlane"  maxlength="18"name='1'><br>
+							2<input type="text" class="addPlane" maxlength="18"name='2'><br>
+							3<input type="text" class="addPlane" maxlength="18"name='3'><br>
+							4<input type="text" class="addPlane" maxlength="18"name='4'><br>
+							5<input type="text" class="addPlane" maxlength="18"name='5'><br>
+							6<input type="text" class="addPlane" maxlength="18"name='6'><br>
+							7<input type="text" class="addPlane" maxlength="18"name='7'><br>
+							8<input type="text" class="addPlane" maxlength="18"name='8'><br>
+							9<input type="text" class="addPlane" maxlength="18"name='9'><br>
+							10<input type="text" class="addPlane" id="input10" maxlength="18" name='10'><br>
 							 <input type='submit' value='Zapisz :)' id="save">
 
 

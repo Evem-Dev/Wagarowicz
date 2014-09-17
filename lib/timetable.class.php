@@ -18,31 +18,12 @@ class TimeTable implements iTimetable
 	}
 
 
-	public function addNextLesson($day,$name)
+	public function add($day,$name,$id)
 	{
-		if(!empty($day) and !empty($name))
+		if(!empty($day) and !empty($name) and isset($id))
 		{
-			switch ($day) {
-				case 'pn':
-					array_push($this->pn,$name);
-					break;
-					case 'wt':
-						array_push($this->wt,$name);
-						break;
-						case 'sr':
-							array_push($this->sr,$name);
-							break;
-							case 'cz':
-								array_push($this->cz,$name);
-								break;
-								case 'pt':
-									array_push($this->pt,$name);
-									break;
-				
-				default:
-					return "DAY_NOT_EXISTS";
-					break;
-			}
+			$this->{$day}[$id] = $name;
+			
 		}
 
 

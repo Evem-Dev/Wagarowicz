@@ -32,15 +32,16 @@ class modelPlan extends modelAccount
 					switch ($field) {
 						case 'attendence':
 							$val = serialize($this->attendence);						
-							$this->db->exec("update set attendence='$val' where login='$l'");
+							$this->db->exec("update users set attendence='$val' where login='$l'");
 							break;
 						case 'plan':
 							$val = serialize($this->plan);
-							$this->db->exec("update set plan='$val' where login='$l'");
+
+							$this->db->exec("update users set plan='$val' where login='$l'");
 							break;
 						case 'subjects':
 							$val = serialize($this->subjects);
-							$this->db->exec("update set subjects='$val' where login='$l' ");
+							$this->db->exec("update users set subjects='$val' where login='$l' ");
 							break;
 
 						default:
@@ -51,48 +52,65 @@ class modelPlan extends modelAccount
 				else
 				{
 							$val = serialize($this->attendence);						
-							$this->db->exec("update set attendence='$val' where login='$l'");
+							$this->db->exec("update users set attendence='$val' where login='$l'");
 							$val = serialize($this->plan);
-							$this->db->exec("update set plan='$val' where login='$l'");
+							$this->db->exec("update users set plan='$val' where login='$l'");
 							$val = serialize($this->subjects);
-							$this->db->exec("update set plan='$val' where login='$l' ");
+
+							$this->db->exec("update users set subjects='$val' where login='$l' ");
 				}
 		}
 	}
-	public function createPlan($pn,$wt,$sr,$cz,$pt)
+	public function createPlan($day)
 	{
 		if($this->auth())
 		{	
-			$this->plan->clearAllTable();
-			$sz = sizeof($pn);
-			for($i=0;$i<$sz;$i++)
+			$this->plan->clearDay($day);
+			if(isset($_POST['1']))
 			{
-				$this->plan->addNextLesson('pn',$pn[$i]);
+				var_dump($_POST['1']);
+				$this->plan->add($day,$_POST['1'],0);
+				$this->updateDB('plan');
 			}
-
-			$sz = sizeof($wt);
-			for($i=0;$i<$sz;$i++)
+			if(isset($_POST['2']))
 			{
-				$this->plan->addNextLesson('wt',$wt[$i]);
+				$this->plan->add($day,$_POST['2'],1);
 			}
-
-			$sz = sizeof($sr);
-			for($i=0;$i<$sz;$i++)
+			if(isset($_POST['3']))
 			{
-				$this->plan->addNextLesson('sr',$sr[$i]);
+				$this->plan->add($day,$_POST['3'],2);
 			}
-
-			$sz = sizeof($cz);
-			for($i=0;$i<$sz;$i++)
+			if(isset($_POST['4']))
 			{
-				$this->plan->addNextLesson('cz',$cz[$i]);
+				$this->plan->add($day,$_POST['4'],3);
 			}
-
-			$sz = sizeof($pt);
-			for($i=0;$i<$sz;$i++)
+			if(isset($_POST['5']))
 			{
-				$this->plan->addNextLesson('pt',$pt[$i]);
+				$this->plan->add($day,$_POST['5'],4);
 			}
+			if(isset($_POST['6']))
+			{
+				$this->plan->add($day,$_POST['6'],5);
+			}
+			if(isset($_POST['7']))
+			{
+				$this->plan->add($day,$_POST['7'],6);
+			}
+			if(isset($_POST['8']))
+			{
+				$this->plan->add($day,$_POST['8'],7);
+			}
+			if(isset($_POST['9']))
+			{
+				$this->plan->add($day,$_POST['9'],8);
+			}
+			if(isset($_POST['10']))
+			{
+				$this->plan->add($day,$_POST['10'],9);
+			}
+			
+			
+			
 			
 			$this->updateDB('plan');
 		}

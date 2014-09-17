@@ -15,7 +15,7 @@ class viewAccount extends View
 			{
 				if($this->model->auth())
 				{
-					$this->model->createPlan(array("fuck","fuck"),array("fuck","fuck","fuck"),array("shit"),array("shit","shit","shit","shit"),array("huj"));
+					
 					$this->account_info = array('Login'=>$_SESSION['login']);
 
 					$this->profile();
@@ -94,6 +94,10 @@ class viewAccount extends View
 
 			public function addplan()
 			{
+				if(isset($_GET['day']))
+				{
+					$this->model->createPlan($_GET['day']);
+				}
 				$this->render('Plan/Add');
 			}
 
