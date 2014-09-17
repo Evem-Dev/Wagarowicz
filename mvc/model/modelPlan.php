@@ -22,7 +22,43 @@ class modelPlan extends modelAccount
 		}
 
 	}
+	public function updateDB($field = NULL)
+	{
+		if($this->auth())
+		{	
+				$l = $_SESSION['login'];
+				if(!empty($field))
+				{
+					switch ($field) {
+						case 'attendence':
+							$val = serialize($this->attendence);						
+							$this->db->exec("update set attendence='$val' where login='$l'");
+							break;
+						case 'plan':
+							$val = serialize($this->plan);
+							$this->db->exec("update set plan='$val' where login='$l'");
+							break;
+						case 'subjects':
+							$val = serialize($this->subjects);
+							$this->db->exec("update set plan='$val' where login='$l' ");
+							break;
 
+						default:
+							# code...
+							break;
+					}
+				}
+				else
+				{
+							$val = serialize($this->attendence);						
+							$this->db->exec("update set attendence='$val' where login='$l'");
+							$val = serialize($this->plan);
+							$this->db->exec("update set plan='$val' where login='$l'");
+							$val = serialize($this->subjects);
+							$this->db->exec("update set plan='$val' where login='$l' ");
+				}
+		}
+	}
 	public function createPlan($pn,$wt,$sr,$cz,$pt)
 	{
 		if($this->auth())
@@ -35,7 +71,7 @@ class modelPlan extends modelAccount
 	{
 		if($_SESSION['auth'])
 		{
-			return $this->plan->getPlan();
+			return $this->plan->getPlan(); 
 
 		}
 	}
@@ -46,8 +82,9 @@ class modelPlan extends modelAccount
 		{
 			if($_SESSION['auth'])
 			{
-				$l = $_SESSION['login'];
-				$this->db->exec("insert into attend_".$l." values('NULL','$subject','$date')");
+				$this->attendence->addAbsent($subject,$date);
+				$this->updateDB('attendence');
+
 
 			}
 		}
