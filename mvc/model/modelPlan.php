@@ -35,7 +35,7 @@ class modelPlan extends modelAccount
 	{
 		if($_SESSION['auth'])
 		{
-			
+			return $this->plan->getPlan();
 
 		}
 	}

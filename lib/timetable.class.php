@@ -122,6 +122,47 @@ class TimeTable implements iTimetable
 		}
 	}
 
+
+	public function getDay($day)
+	{
+		if(!empty($day))
+		{
+			switch ($day) 
+				{
+					case 'pn':
+						return $this->pn;
+						break;
+						case 'wt':
+							return $this->wt;
+							break;
+							case 'sr':
+								return $this->sr;
+								break;
+								case 'cz':
+									return $this->cz;
+									break;
+									case 'pt':
+										return $this->pt;
+										break;
+					
+					default:
+						return "DAY_NOT_EXISTS";
+						break;
+				}
+		}
+	}
+
+	public function getPlan()
+	{
+		return array("pn" => $this->pn,
+					 "wt" => $this->wt,
+					 "sr" => $this->sr,
+					 "cz" => $this->cz,
+					 "pt" => $this->pt,
+			);
+	}
+
+
 }
 
 
