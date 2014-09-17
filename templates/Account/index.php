@@ -62,40 +62,19 @@
 					<tr>
 						 <th class="nol" id="nol0"></th><th class="days" id="day1">Poniedziałek</th><th class="days" id="day2">Wtorek</th><th class="days" id="day3">Środa</th class="days id="day="day4"><th class="days" id="day5">Czwartek</th><th class="days" id="day6">Piątek</th>
 					</tr>
-					<tr class="wers" id="w0">
-						<th class="nol" id="nol1">1</th><td class="subjects" id="s1">Lesson</td><td class="subjects" id="s2">Lesson</td><td class="subjects" id="s3">Lesson</td><td class="subjects" id="s4">Lesson</td><td class="subjects" id="s5">Lesson</td>
-					</tr>
-					<tr class="wers" id="w1">
-						<th class="nol" id="nol2">2</th><td class="subjects" id="s1">Lesson</td><td class="subjects" id="s2">Lesson</td><td class="subjects" id="s3">Lesson</td><td class="subjects" id="s4">Lesson</td><td class="subjects" id="s5">Lesson</td>
-					</tr>
-					<tr class ="wers" id="w2">
-						<th class="nol" id="nol3">3</th><td class="subjects" id="s1">Lesson</td><td class="subjects" id="s2">Lesson</td><td class="subjects" id="s3">Lesson</td><td class="subjects" id="s4">Lesson</td><td class="subjects" id="s5">Lesson</td>
-					</tr>
-					<tr class="wers" id="w3">
-						<th class="nol" id="nol4">4</th><td class="subjects" id="s1">Lesson</td><td class="subjects" id="s2">Lesson</td><td class="subjects" id="s3">Lesson</td><td class="subjects" id="s4">Lesson</td><td class="subjects" id="s5">Lesson</td>
-					</tr>
-					<tr class="wers" id="w4">
-						<th class="nol" id="nol5">5</th><td class="subjects" id="s1">Lesson</td><td class="subjects" id="s2">Lesson</td><td class="subjects" id="s3">Chuj w dupe Policji i jebanym Sokistom</td><td class="subjects" id="s4">Lesson</td><td class="subjects" id="s5">Lesson</td>
-					</tr>
-					<tr class="wers" id="w5">
-						<th class="nol" id="nol6">6</th><td class="subjects" id="s1">Lesson</td><td class="subjects" id="s2">Lesson</td><td class="subjects" id="s3">Lesson</td><td class="subjects" id="s4">Lesson</td><td class="subjects" id="s5">Lesson</td>
-					</tr>
-					<tr class="wers" id="w6">
-						<th class="nol" id="nol7">7</th><td class="subjects" id="s1">Lesson</td><td class="subjects" id="s2">Lesson</td><td class="subjects" id="s3">Lesson</td><td class="subjects" id="s4">Lesson</td><td class="subjects" id="s5">Lesson</td>
-					</tr>
-					<tr class="wers" id="w7">
-						<th class="nol" id="nol8">8</th><td class="subjects" id="s1">Lesson</td><td class="subjects" id="s2">Lesson</td><td class="subjects" id="s3">Lesson</td><td class="subjects" id="s4">Lesson</td><td class="subjects" id="s5">Lesson</td>
-					</tr>
-					<tr class="wers" id="w8">
-						<th class="nol" id="nol9">9</th><td class="subjects" id="s1">Lesson</td ><td class="subjects" id="s2">Lesson</td><td class="subjects" id="s3">Lesson</td><td class="subjects" id="s4">Lesson</td><td class="subjects" id="s5">Lesson</td>
-					</tr>
-					<tr class="wers" id="w9">
-						<th class="nol" id="nol10">10</th><td class="subjects" id="s1">Lesson</td><td class="subjects" id="s2">Lesson</td><td class="subjects" id="s3">Lesson</td><td class="subjects" id="s4">Lesson</td><td class="subjects" id="s5">Lesson</td>
-					</tr>
-					</table>
+					<?php
+					for($i=0;$i<$this->len;$i++)
+					{
+						$n = $i+1;
+						echo"<tr class='wers' id='w0'>
+						<th class='nol' id='nol1'>".$n."</th><td class='subjects' id='s1'>"; if(isset($this->pn[$i])){echo $this->pn[$i];}else{echo "brak";} echo "</td><td class='subjects' id='s2'>";if(isset($this->wt[$i])){echo $this->wt[$i];}else{echo "brak";} echo "</td><td class='subjects' id='s3'>";if(isset($this->sr[$i])){echo $this->sr[$i];}else{echo "brak";} echo "</td><td class='subjects' id='s4'>";if(isset($this->cz[$i])){echo $this->cz[$i];}else{echo "brak";} echo "</td><td class='subjects' id='s5'>";if(isset($this->pt[$i])){echo $this->pt[$i];}else{echo "brak";} echo "</td>";
+						echo "</tr>";
+					}
+					?>
+										</table>
 
 									<form>	
-										<a id="aButon" href="index.php?request=Account&action=addPlan"><input type="submit" value="Dodaj Plan Zajęć" id="editionButon"><a/>
+										<a id="aButon" href="index.php?request=Account&action=addplan"><input type="button" value="Dodaj Plan Zajęć" id="editionButon"><a/>
 									</form>			
 							</div>
 

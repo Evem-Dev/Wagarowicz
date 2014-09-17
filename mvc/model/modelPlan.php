@@ -40,7 +40,7 @@ class modelPlan extends modelAccount
 							break;
 						case 'subjects':
 							$val = serialize($this->subjects);
-							$this->db->exec("update set plan='$val' where login='$l' ");
+							$this->db->exec("update set subjects='$val' where login='$l' ");
 							break;
 
 						default:
@@ -62,8 +62,39 @@ class modelPlan extends modelAccount
 	public function createPlan($pn,$wt,$sr,$cz,$pt)
 	{
 		if($this->auth())
-		{
+		{	
+			$this->plan->clearAllTable();
+			$sz = sizeof($pn);
+			for($i=0;$i<$sz;$i++)
+			{
+				$this->plan->addNextLesson('pn',$pn[$i]);
+			}
+
+			$sz = sizeof($wt);
+			for($i=0;$i<$sz;$i++)
+			{
+				$this->plan->addNextLesson('wt',$wt[$i]);
+			}
+
+			$sz = sizeof($sr);
+			for($i=0;$i<$sz;$i++)
+			{
+				$this->plan->addNextLesson('sr',$sr[$i]);
+			}
+
+			$sz = sizeof($cz);
+			for($i=0;$i<$sz;$i++)
+			{
+				$this->plan->addNextLesson('cz',$cz[$i]);
+			}
+
+			$sz = sizeof($pt);
+			for($i=0;$i<$sz;$i++)
+			{
+				$this->plan->addNextLesson('pt',$pt[$i]);
+			}
 			
+			$this->updateDB('plan');
 		}
 	}
 

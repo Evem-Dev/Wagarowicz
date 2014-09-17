@@ -15,9 +15,10 @@ class viewAccount extends View
 			{
 				if($this->model->auth())
 				{
+					$this->model->createPlan(array("fuck","fuck"),array("fuck","fuck","fuck"),array("shit"),array("shit","shit","shit","shit"),array("huj"));
 					$this->account_info = array('Login'=>$_SESSION['login']);
 
-					$this->render('Account');
+					$this->profile();
 
 				}
 				else
@@ -58,19 +59,43 @@ class viewAccount extends View
 				
 			}
 
-		
+
+/////////////////////////////////////////////
+		public $len;
+		public $pn;
+		public $wt;
+		public $sr;
+		public $cz;
+		public $pt;
 		public function profile()
 		{
 			if($this->model->auth())
 			{
-				$plan = $this->modelPlan->getPlan();
-				$absent = $this->modelPlan->getAllAbsent();
+				$plan = $this->model->getPlan();
+				$absent = $this->model->getAllAbsent();
+				$this->pn = $plan['pn'];
+				$this->wt = $plan['wt'];
+				$this->sr = $plan['sr'];
+				$this->cz = $plan['cz'];
+				$this->pt = $plan['pt'];
+				$this->len = max(sizeof($this->pn),sizeof($this->wt),sizeof($this->sr),sizeof($this->cz),sizeof($this->pt));
 
 
 
 				$this->render('Account');
 			}
 		}
+
+
+
+
+			//Actions
+
+
+			public function addplan()
+			{
+				$this->render('Plan/Add');
+			}
 
 }
 
