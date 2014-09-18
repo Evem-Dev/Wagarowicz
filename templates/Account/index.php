@@ -46,7 +46,7 @@
 
 					<ul class="tabs">
 						<li><a href="#tab1" tabindex="1">Twój plan lekcji</a></li>
-						<li><a href="#tab2" tabindex="2">Z czego możesz jeszcze spierdolić</a></li>
+						<li><a href="#tab2" tabindex="2">Nieobecności</a></li>
 						<li></li>
 					</ul>
 
@@ -84,82 +84,21 @@
 					<table border="12px" class="spierdalajTable">
 
 					<tr class="wers">
-						<th id="subjectHead">Przedmiot</th><th id="howManyHead">Ile razy możesz spierdolić</th> <th id="frekHead">Twoja frekwencja w %</th>
+						<th id="subjectHead">Przedmiot</th><th id="howManyHead">Data</th> <th id="frekHead">Twoja frekwencja w %</th>
 					</tr>
+					<?php
+					$subject = $this->absent['subjects'];
+					$date = $this->absent['adate'];
+					$sz = sizeof($date);
+					for($i=0;$i<$sz;$i++)
+					{
+					echo "<tr class='wers'>
+						<td class='subject'>".$subject[$i]."</td><td class='howMany'>".$date[$i]."</td> <td class='frek'>NULL</td>
+					</tr>";
+					}
+					?>
 
-					<tr class="wers">
-						<td class="subject">Polski</td><td class="howMany">5</td> <td class="frek">78%</td>
-					</tr>
-
-
-					<tr class="wers">
-						<td class="subject">Matma</td><td class="howMany">5</td> <td class="frek">78%</td>
-					</tr>
-
-
-					<tr class="wers">
-						<td class="subject">Analiza Chemiczna</td><td class="howMany">5</td><td class="frek">78%</td>
-					</tr>
-
-
-					<tr class="wers">
-						<td class="subject">Identyfikacja jednostki centralnej </td><td class="howMany">5</td><td class="frek">78%</td>
-					</tr>
-
-
-					<tr class="wers">
-						<td class="subject">Test</td><td class="howMany">5</td><td class="frek">78%</td>
-					</tr>
-
-
-					<tr class="wers">
-						<td class="subject">Test</td><td class="howMany">5</td><td class="frek">78%</td>
-					</tr>
-
-
-					<tr class="wers">
-						<td class="subject">Test</td><td class="howMany">5</td><td class="frek">78%</td>
-					</tr>
-
-
-					<tr class="wers">
-						<td class="subject">Test</td><td class="howMany">5</td><td class="frek">78%</td>
-					</tr>
-
-
-					<tr class="wers">
-						<td class="subject">Test</td><td class="howMany">5</td><td class="frek">78%</td>
-					</tr>
-
-
-					<tr class="wers">
-						<td class="subject">Test</td><td class="howMany">5</td><td class="frek">78%</td>
-					</tr>
-
-
-					<tr class="wers">
-						<td class="subject">Test</td><td class="howMany">5</td><td class="frek">78%</td>
-					</tr>
-
-
-					<tr class="wers">
-						<td class="subject">Test</td><td class="howMany">5</td><td class="frek">78%</td>
-					</tr>
-
-
-					<tr class="wers">
-						<td class="subject">Test</td><td class="howMany">5</td><td class="frek">78%</td>
-					</tr>
-
-
-					<tr class="wers">
-						<td class="subject">Test</td><td class="howMany">5</td><td class="frek">78%</td>
-					</tr>
-
-
-					<tr class="wers">
-						<td class="subject">Test</td><td class="howMany">5</td><td class="frek">78%</td>
-					</tr>
+					
 
 					</table>
 							</div>

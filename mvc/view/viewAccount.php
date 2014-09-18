@@ -67,18 +67,20 @@ class viewAccount extends View
 		public $sr;
 		public $cz;
 		public $pt;
+		public $absent;
 		public function profile()
 		{
 			if($this->model->auth())
 			{
 				$plan = $this->model->getPlan();
-				$absent = $this->model->getAllAbsent();
+				$this->absent = $this->model->getAllAbsent();
 				$this->pn = $plan['pn'];
 				$this->wt = $plan['wt'];
 				$this->sr = $plan['sr'];
 				$this->cz = $plan['cz'];
 				$this->pt = $plan['pt'];
 				$this->len = max(sizeof($this->pn),sizeof($this->wt),sizeof($this->sr),sizeof($this->cz),sizeof($this->pt));
+
 
 
 
@@ -100,6 +102,7 @@ class viewAccount extends View
 				}
 				$this->render('Plan/Add');
 			}
+
 
 }
 
