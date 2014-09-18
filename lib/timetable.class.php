@@ -34,7 +34,7 @@ class TimeTable implements iTimetable
 	{
 		if(!empty($day))
 		{
-			if(!empty($day) and !empty($name))
+			if(!empty($day))
 			{
 				switch ($day) 
 				{

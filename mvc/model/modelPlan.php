@@ -66,11 +66,13 @@ class modelPlan extends modelAccount
 		if($this->auth())
 		{	
 			$this->plan->clearDay($day);
+			
 			if(isset($_POST['1']))
 			{
-				var_dump($_POST['1']);
+				
 				$this->plan->add($day,$_POST['1'],0);
-				$this->updateDB('plan');
+				
+
 			}
 			if(isset($_POST['2']))
 			{
@@ -109,9 +111,59 @@ class modelPlan extends modelAccount
 				$this->plan->add($day,$_POST['10'],9);
 			}
 			
+			//Update list of subjects
+
+			$pn = $this->plan->getDay('pn');
+			$wt = $this->plan->getDay('wt');
+			$sr = $this->plan->getDay('sr');
+			$cz = $this->plan->getDay('cz');
+			$pt = $this->plan->getDay('pt');
+
+			$list = array();
+			$list_ptr = 0;
+			$sz = sizeof($pn);
+			for($i=0;$i<$sz;$i++)
+			{
+				$list[$list_ptr] = $pn[$i];
+				$list_ptr++;
+			}
+			$sz = sizeof($wt);
+			for($i=0;$i<$sz;$i++)
+			{
+				$list[$list_ptr] = $wt[$i];
+				$list_ptr++;
+			}
+			$sz = sizeof($sr);
+			for($i=0;$i<$sz;$i++)
+			{
+				$list[$list_ptr] = $sr[$i];
+				$list_ptr++;
+			}
+			$sz = sizeof($cz);
+			for($i=0;$i<$sz;$i++)
+			{
+				$list[$list_ptr] = $cz[$i];
+				$list_ptr++;
+			}
+			$sz = sizeof($pt);
+			for($i=0;$i<$sz;$i++)
+			{
+				$list[$list_ptr] = $pt[$i];
+				$list_ptr++;
+			}
+			$list = array_map('strtolower', $list);
+			$list = array_unique($list,SORT_STRING);
+			$this->subjects->set($list);
+
 			
 			
 			
+
+
+
+			//eof
+			
+			$this->updateDB('subjects');
 			$this->updateDB('plan');
 		}
 	}
